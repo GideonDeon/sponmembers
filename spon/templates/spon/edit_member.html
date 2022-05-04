@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/static/images/logo.png" type="image/x-icon">
+    <title>Edit member</title>
+</head>
+<body>
+    <form action="{% url 'edit_member_detail' detail.id %}" method="POST">
+        {% csrf_token %}
+        <label>
+            <br>
+            FullName:
+            <br>
+            <input type="text" name="FullName" class="input"  value="{{detail.FullName}}" >
+        </label>
+        <br>
+        <br>
+        <label>
+            Gender:
+            <br>
+            <input type="text" name="Gender" class="input"  value="{{detail.Gender}}" >
+        </label>
+        <br>
+        <br>
+        <label>
+            SponNo:
+            <br>
+            <input type="text" name="SponNo" class="input"  value="{{detail.SponNo}}">
+        </label>
+        <br>
+        <br>
+        <label>
+            PhoneNo:
+            <br>
+            <input type="text" name="PhoneNo" class="input"  value="{{detail.PhoneNo}}" >
+        </label>
+        <br>
+        <br>
+        <label>
+            State:
+            <br>
+            <input type="text" name="State" class="input"  value="{{detail.State}}">
+        </label>
+        <br>
+        <br>
+        <label>
+            LocalGov:
+            <br>
+            <input type="text" name="LocalGov" class="input"  value="{{detail.LocalGov}}" >
+        </label>
+        <br>
+        <br>
+        <label>
+            Status:
+            <br>
+            <input type="text" name="Status" class="input"  value="{{detail.Status}}" >
+        </label>
+        <br>
+        <br>
+        <button>save</button>
+    </form>
+</body>
+</html>

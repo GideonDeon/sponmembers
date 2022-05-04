@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/members.css' %}">
+    <link rel="shortcut icon" href="/static/images/logo.png" type="image/x-icon">
+    <title>edit</title>
+</head>
+<body>
+    <form action="{% url 'search_edit'  %}" method="POST" class="search2">
+        {% csrf_token %}
+        <input type="text" placeholder="Search name" class="sear" name="searched">
+        <br>
+        <br>
+        <button class="button">Search</button>
+    </form>
+    <table border="1" class=" editM">
+        <tr>
+            <th>S/N</th>
+            <th>FullName</th>
+            <th>Gender</th>
+            <th>Spon Number</th>
+            <th>Phone Number</th>
+            <th>State</th>
+            <th>Local Government</th>
+            <th>Status</th>
+        </tr>
+        {% for mode in mode %}
+             <tr>
+                 <td class="sn">{{forloop.counter}}</td>
+                 <td>{{mode.FullName}}</td>
+                 <td>{{mode.Gender}}</td>
+                 <td>{{mode.SponNo}}</td>
+                 <td>{{mode.PhoneNo}}</td>
+                 <td>{{mode.State}}</td>
+                 <td>{{mode.LocalGov}}</td>
+                 <td>{{mode.Status}}</td>
+                 <td><a href="{% url 'edit_member' mode.id %}">edit</a></td>
+             </tr>
+            
+        {%endfor%}    
+    </table>
+</body>
+</html>

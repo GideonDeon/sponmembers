@@ -1,0 +1,413 @@
+::selection{
+    background-color: #7409a0;
+    color: white;
+}
+@media (min-width: 320px) and (max-width:550px){
+    nav>img{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 100px;
+        width: 100px;
+
+    }
+    .div{
+       display: none;
+    }
+    .menuwrapper{
+        height: 1.7em;
+        width: 1.7em;
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        padding: 3px;
+        position: absolute;
+        top: 8em;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .menuwrapper>div{
+        background-color: black;
+        height: 0.3em;
+        border-radius: 20px;
+        
+    }
+    .checkbox{
+        height: 2em;
+        width: 2.3em;
+        position: absolute;
+        top: 9.4em;
+        left: 49%;
+        transform: translateX(-49%);
+        opacity: 0;
+    }
+    .checkbox:checked+.menu{
+        display: block;
+    }
+    .menu{
+        position: absolute;
+        top: 10em;
+        display: none;
+        z-index: 1;
+        background-color: white;
+    }
+    .menu>div>a{
+        text-decoration: none;
+        color: black;
+        font-family: sans-serif;
+    }
+    .menu>div{
+        height: 30px;
+        width: 100vw;
+        padding: 6px;
+        padding-bottom: 20px;  
+    }
+    .menu>div:nth-child(odd):active, .menu>div:nth-child(even):active{
+        background-color: rgb(54, 53, 53);
+        color: white;
+    }
+    .menu>div>a:nth-child(odd):active, .menu>div>a:nth-child(even):active{
+        background-color: rgb(54, 53, 53);
+        color: white;
+    }
+    .menu>div:nth-child(odd):hover, .menu>div:nth-child(even):hover{
+        background-color: rgb(45, 45, 46);
+        color: white;
+    }
+    .menu>div>a:nth-child(odd):hover, .menu>div>a:nth-child(even):hover{
+        background-color: rgb(45, 45, 46);
+        color: white;
+    }
+    .content{
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%,-30%);
+        height: 200px;
+        width: 148%;
+        text-align: center;
+        padding-top: 10px;
+        text-transform: uppercase;
+        font-size: 1.5em;
+        color: white;
+        background-color:#7409a0;
+    }
+    .popp{
+        height: 80px;
+        width: 80px;
+        position: relative;
+        bottom: 1.5em;
+        cursor: default;
+    }
+    .search{
+        position: absolute;
+        top: 26em;
+        left: 20px;
+        width: 200px;
+        
+    }
+
+    .sear{
+        border: solid 2px #7409a0;
+        height: 30px;
+        width: 200px;
+    
+    }
+    .button{
+        background-color: #7409a0;
+        color: white;
+        border-radius: 10px;
+        font-size: 15px;
+        cursor: pointer;
+    }
+    table{
+        position: absolute;
+        top: 500px;
+        width: 5em;
+        text-align: justify;
+        border: none;
+    }
+    .sn{
+        text-indent: 20px;
+        list-style-type: decimal;
+    }
+    th{
+        background-color: #7409a0;
+        color: white;
+        text-align: center;
+    }
+    tr:nth-child(odd){
+        background-color: rgb(233, 124, 243);
+    }
+    .resultTable{
+       
+        position: absolute;
+        top: 100px;
+        width: 5em;
+        text-align: justify;
+        border: none;  
+    }
+    .notFound{
+        position: absolute;
+        top: 250px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: justify;
+        text-transform: uppercase;
+        font-size: 20px;
+        border: none;   
+    } 
+    .result{
+        text-align: center;
+        text-transform: capitalize;
+        font-size: 2em; 
+    }
+}
+@media (min-width:551px){
+    nav>img{
+        position: absolute;
+        left: 25%;
+        transform: translateX(-25%);
+    }
+    .div{
+        display: inline-block;
+        position: absolute;
+        top: 3.5em;
+        right: 5%;
+        width: 700px;
+    }
+    div>a{
+        display: inline-block;
+        text-decoration: none;
+    }
+    .menuwrapper{
+        display: none;
+    }
+    #formy{
+        display: none;
+    }
+    div>a>li{
+        color: black;
+        font-size: 17px;
+        font-family: sans-serif;
+        font-weight: 600;
+        list-style-type: none;
+    }
+    nav>div>.div1{
+        width: 90px;
+        height: 3px;
+        background-color: green;
+        position: absolute;
+        left: -3.5%;
+        top: 3em;
+        transform: translateX(3.5%);
+        display: none;
+    }
+
+    nav>div>.div2{
+        width: 90px;
+        height: 3px;
+        background-color: green;
+        position: absolute;
+        left: 12%;
+        top: 3em;
+        transform: translateX(-12%);
+        display: none;
+    }
+    nav>div>.div3{
+        width: 90px;
+        height: 3px;
+        background-color: green;
+        position: absolute;
+        left: 28%;
+        top: 3em;
+        transform: translateX(-28%);
+        display: none;
+    
+    }
+    nav>div>.div4{
+        width: 90px;
+        height: 3px;
+        background-color: green;
+        position: absolute;
+        left: 49%;
+        top: 3em;
+        transform: translateX(-49%);
+        display: none;
+        
+    }
+    nav>div>.div5{
+        width: 90px;
+        height: 3px;
+        background-color: green;
+        position: absolute;
+        left: 70%;
+        top: 3em;
+        transform: translateX(-70%);
+        display: none;
+        
+    }
+    div>a:first-child:hover ~.div1{
+        display: block;
+    }
+    div>a:nth-child(2):hover ~.div2{
+        display: block;
+    }
+    div>a:nth-child(3):hover ~.div3{
+        display: block;
+    }
+    div>a:nth-child(4):hover ~.div4{
+        display: block;
+    }
+    div>a:nth-child(5):hover ~.div5{
+        display: block;
+    }
+    div>a:nth-child(6):hover ~.div6{
+        display: block;
+    }
+
+    .content{
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%,-30%);
+        height: 200px;
+        width: 100%;
+        text-align: center;
+        padding-top: 10px;
+        text-transform: uppercase;
+        font-size: 2em;
+        color: white;
+        background-color: #7409a0;
+    }
+    .popp{
+        height: 80px;
+        width: 80px;
+        position: relative;
+        bottom: 1.5em;
+        cursor: default;
+    }
+    .search{
+        position: absolute;
+        top: 450px;
+        left: 100px;
+        width: 200px;
+        
+    }
+    .sear{
+        border: solid 2px #7409a0;
+        height: 30px;
+        width: 200px;
+    
+    }
+    .button{
+        background-color: #7409a0;
+        color: white;
+        border-radius: 10px;
+        font-size: 15px;
+        cursor: pointer;
+    }
+    table{
+        position: absolute;
+        top: 500px;
+        left: 50%;
+        transform: translate(-50%);
+        width: 80em;
+        text-align: justify;
+        border: none;
+    }
+    .sn{
+        text-indent: 20px;
+        list-style-type: decimal;
+    }
+    th{
+        background-color: purple;
+        color: white;
+        text-align: center;
+    }
+    tr:nth-child(odd){
+        background-color: rgb(233, 124, 243);
+    }
+    .result{
+        text-align: center;
+        text-transform: capitalize;
+        font-size: 5em; 
+    }
+    .resultTable{
+        position: absolute;
+        top: 200px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80em;
+        text-align: justify;
+        border: none;    
+    }
+    .notFound{
+        position: absolute;
+        top: 250px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: justify;
+        text-transform: uppercase;
+        font-size: 20px;
+        border: none;   
+    } 
+    form{
+        position: absolute;
+        top: 70%;
+        left: 43%;
+        transform: translate(-43%, -70%);
+        width: 200px;
+        padding: 20px;
+    }
+    .input{
+        width: 400px;
+        height: 30px;
+    }
+    .edit{
+        position: absolute;
+        bottom: 30px;
+        left: 900px;
+        height: 30px;
+        background-color: #7409a0;
+        color: white;
+        padding-top: 10px;
+        border-radius: 10px;
+        border: solid 2px black;
+        text-transform: capitalize;
+
+    }
+    .editM{
+        position: absolute;
+        top: 200px;
+        left: 50%;
+        transform: translate(-50%);
+        width: 80em;
+        text-align: justify;
+        border: none;
+    }
+    .search2{
+        position: absolute;
+        top: 100px;
+        left: 100px;
+        width: 200px;
+    }
+    .stat1{
+        color:rgb(11, 247, 11);
+        font-weight: 700;
+    }
+    .stat2{
+        color: orange ;
+        font-weight: 700;
+    }
+    .stat3{
+        color: red;
+        font-weight: 700;
+    }
+    .stat4{
+        color: black;
+        font-weight: 700;
+    }
+}   
+
+
+

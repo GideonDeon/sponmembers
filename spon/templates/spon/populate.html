@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/static/images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/populate.css' %}">
+    <title>Populate</title>
+</head>
+<body>
+    <main>
+        <form action="{% url 'login' %}" method="POST" onsubmit= "return validate()" name="form">
+            {% csrf_token %}
+            <h3 class="admin">For admin only!</h3>
+            <label >
+                Username:
+                <input type="text" placeholder="username" autocomplete=none name="username" id="user" required>
+            </label>
+            <br>
+            <br>
+            <label >
+                Password:
+                <input type="password" placeholder="password" name="password" id="pass" >
+            </label>
+            <br>
+            <br>
+            <label>
+                <button>Login</button>
+            </label>
+            <a href="" class="back">Back</a>
+        </form>
+    </main>
+    <script type="text/javascript" src="{% static 'js/populate.js'%}"></script>
+</body>
+</html>

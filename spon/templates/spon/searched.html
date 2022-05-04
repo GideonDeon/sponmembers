@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/static/images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/members.css' %}">
+    <title>Members</title>
+</head>
+<body>
+    <h1 class="result">search result</h1>
+    
+    <table border="1" class="resultTable">
+        <tr>
+            <th>S/N</th>
+            <th>FullName</th>
+            <th>Gender</th>
+            <th>Spon Number</th>
+            <th>Phone Number</th>
+            <th>State</th>
+            <th>Local Government</th>
+            <th>Status</th>
+        </tr>
+        {% if search %}
+            {% for search in search %}
+                <tr>
+                    <td class="sn">{{forloop.counter}}</td>
+                    <td>{{search.FullName}}</td>
+                    <td>{{search.Gender}}</td>
+                    <td>{{search.SponNo}}</td>
+                    <td>{{search.PhoneNo}}</td>
+                    <td>{{search.State}}</td>
+                    <td>{{search.LocalGov}}</td>
+                    <td>{{search.Status}}</td>
+                </tr>
+            {%endfor%} 
+        {% else %}
+            <p class="notFound">No matching Result</p>
+        {% endif %} 
+    </table>
+        
+</body>
+</html>

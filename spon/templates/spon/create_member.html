@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+{% load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/static/images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/members.css' %}">
+    <title>Create Member</title>
+</head>
+<body>
+        <nav>
+            <img src="/static/images/logo.png">
+            <div class="div">
+                <a href=""><li>Home</li></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href=""><li>About</li></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href=""><li>Contact</li></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href=""><li>Membership</li></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href=""><li>Members</li></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <div class="div1"></div>
+                <div class="div2"></div>
+                <div class="div3"></div>
+                <div class="div4"></div>
+                <div class="div5"></div>
+            </div>
+        </nav>
+    <form action="{% url 'create_member_details' %}" method="POST">
+        {% csrf_token %}
+        <label>
+            <br>
+            FullName:
+            <br>
+            <input type="text" name="FullName" class="input" >
+        </label>
+        <br>
+        <br>
+        <label>
+            Gender:
+            <br>
+            <input type="text" name="Gender" class="input" >
+        </label>
+        <br>
+        <br>
+        <label>
+            SponNo:
+            <br>
+            <input type="text" name="SponNo" class="input" >
+        </label>
+        <br>
+        <br>
+        <label>
+            PhoneNo:
+            <br>
+            <input type="text" name="PhoneNo" class="input" >
+        </label>
+        <br>
+        <br>
+        <label>
+            State:
+            <br>
+            <input type="text" name="State" class="input" >
+        </label>
+        <br>
+        <br>
+        <label>
+            LocalGov:
+            <br>
+            <input type="text" name="LocalGov" class="input" >
+        </label>
+        <br>
+        <br>
+        <label>
+            Status:
+            <br>
+            <input type="text" name="Status" class="input" >
+        </label>
+        <br>
+        <br>
+        <button>Submit</button>
+    </form>
+    <a href="{% url 'edit' %}" target="_blank"><p class="edit">edit member</p></a>
+</body>
+</html>
