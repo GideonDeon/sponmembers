@@ -47,7 +47,7 @@
     </div>
      <form action="{% url 'search' %}" method="POST" class="search">
         {% csrf_token %}
-        <input type="search" placeholder="Search name" class="sear" name="searched">
+        <input type="search" placeholder="Search name(in capital letters)" class="sear" name="searched">
         <br>
         <br>
         <button class="button">Search</button>
