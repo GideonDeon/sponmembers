@@ -79,7 +79,7 @@
     }
     .content{
         position: absolute;
-        top: 30%;
+        top: 40%;
         left: 50%;
         transform: translate(-50%,-30%);
         height: 200px;
@@ -160,6 +160,22 @@
         text-align: center;
         text-transform: capitalize;
         font-size: 2em; 
+    }
+    .stat1{
+        color:rgb(11, 247, 11);
+        font-weight: 700;
+    }
+    .stat2{
+        color: orange ;
+        font-weight: 700;
+    }
+    .stat3{
+        color: red;
+        font-weight: 700;
+    }
+    .stat4{
+        color: black;
+        font-weight: 700;
     }
 }
 @media (min-width:551px){
