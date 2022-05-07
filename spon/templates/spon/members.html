@@ -10,19 +10,22 @@
     <title>Members</title>
 </head>
 <body>
-    <nav>
+    <div class="nav">
         <img src="/static/images/logo.png">
         <div class="div">
-            <a href="https://spoc.com.ng/"><li>Home</li></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="https://spoc.com.ng/about/"><li>About</li></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="https://spoc.com.ng/contact/"><li>Contact</li></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="https://spoc.com.ng/membership/"><li>Membership</li></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="http://www.spoc-sponmember.com.ng/"><li>Members</li></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <div class="div1"></div>
-            <div class="div2"></div>
-            <div class="div3"></div>
-            <div class="div4"></div>
-            <div class="div5"></div>
+            <ul  class="divmenu">
+                <a href="https://spoc.com.ng/"><li>Home</li></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="https://spoc.com.ng/about/"><li>About</li></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="https://spoc.com.ng/contact/"><li>Contact</li></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="https://spoc.com.ng/membership/"><li>Membership</li></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="http://www.spoc-sponmember.com.ng/"><li>Members</li></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <div class="div1"></div>
+                <div class="div2"></div>
+                <div class="div3"></div>
+                <div class="div4"></div>
+                <div class="div5"></div>
+            </ul> 
+           
         </div>
         <div class="menuwrapper">
             <div></div>
@@ -40,50 +43,62 @@
             </div>
 
         </form>
-    </nav>
+    </div>
     <div class="content">
             <h1>members</h1>
             <a href="{% url 'populate' %}" target="_blank"><img src="/static/images/logo.png" class="popp" ></a> 
     </div>
-     <form action="{% url 'search' %}" method="POST" class="search">
-        {% csrf_token %}
-        <input type="search" placeholder="Search name(in capital letters)" class="sear" name="searched">
-        <br>
-        <br>
-        <button class="button">Search</button>
-    </form>
-   <table border="1">
-       <tr>
-           <th>S/N</th>
-           <th>FullName</th>
-           <th>Gender</th>
-           <th>Spon Number</th>
-           <th>Phone Number</th>
-           <th>State</th>
-           <th>Local Government</th>
-           <th >Status</th>
-       </tr>
-       {% for mem in member %}
+    <div class="search">
+        <form action="{% url 'search' %}" method="POST" >
+            {% csrf_token %}
+            <input type="search" placeholder="Search name(in capital letters)" class="sear" name="searched">
+            <br>
+            <br>
+            <button class="button">Search</button>
+        </form>
+    </div>    
+    <div>
+        <p class="warning">NOTE: if your name is not found or pending, contact 07044252647 Whatsapp!!! </p>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="twrapper">
+        <table border="1">
             <tr>
-                <td class="sn">{{forloop.counter}}</td>
-                <td>{{mem.FullName}}</td>
-                <td>{{mem.Gender}}</td>
-                <td>{{mem.SponNo}}</td>
-                <td>{{mem.PhoneNo}}</td>
-                <td>{{mem.State}}</td>
-                <td>{{mem.LocalGov}}</td>
-                {% if mem.Status == "confirm" %}
-                    <td class="stat1">{{mem.Status}}</td>
-                {% elif  mem.Status == "suspended" %}
-                    <td class="stat2">{{mem.Status}}</td>
-                {% elif mem.Status == "dismissed" %}
-                    <td class="stat3">{{mem.Status}}</td>
-                {% elif mem.Status == "pending" %}
-                    <td class="stat4">{{mem.Status}}</td>    
-                {% endif %}    
+                <th>S/N</th>
+                <th>FullName</th>
+                <th>Gender</th>
+                <th>Spon Number</th>
+                <th>Phone Number</th>
+                <th>State</th>
+                <th>Local Government</th>
+                <th >Status</th>
             </tr>
-       {%endfor%}    
-    </table>
+            {% for mem in member %}
+                    <tr>
+                        <td class="sn">{{forloop.counter}}</td>
+                        <td>{{mem.FullName}}</td>
+                        <td>{{mem.Gender}}</td>
+                        <td>{{mem.SponNo}}</td>
+                        <td>{{mem.PhoneNo}}</td>
+                        <td>{{mem.State}}</td>
+                        <td>{{mem.LocalGov}}</td>
+                        {% if mem.Status == "confirm" %}
+                            <td class="stat1">{{mem.Status}}</td>
+                        {% elif  mem.Status == "suspended" %}
+                            <td class="stat2">{{mem.Status}}</td>
+                        {% elif mem.Status == "dismissed" %}
+                            <td class="stat3">{{mem.Status}}</td>
+                        {% elif mem.Status == "pending" %}
+                            <td class="stat4">{{mem.Status}}</td>    
+                        {% endif %}    
+                    </tr>
+            {%endfor%}    
+        </table>
+    </div>    
+    <footer>All rights reserved 2022</footer>
     <script type="text/javascript" src="{% static 'js/populate.js' %}"></script>
 </body>
 </html>
